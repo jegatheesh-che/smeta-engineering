@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4. Fade in supporting elements
   tl.fromTo(
-    [".hero__eyebrow", ".hero__desc", ".hero__cta", ".nav"],
+    [".hero__eyebrow", ".hero__desc", ".hero__cta"],
     {
       opacity: 0,
       y: 20,

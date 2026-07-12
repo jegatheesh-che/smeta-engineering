@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Register GSAP Plugins
   gsap.registerPlugin(ScrollTrigger);
 
+  // Preloader Logic
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    gsap.timeline()
+      .to('.preloader__progress', { width: "100%", duration: 1.5, ease: "power2.inOut" })
+      .to('.preloader__title', { opacity: 0, y: -20, duration: 0.5 }, "-=0.5")
+      .to('.preloader', { yPercent: -100, duration: 1.2, ease: "power4.inOut" })
+      .set('.preloader', { display: "none" });
+  }
+
   // 2. Reduce motion check
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
@@ -56,21 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       0.3,
     )
-    // Fade in nav
-    .fromTo(
-      ".nav",
-      {
-        opacity: 0,
-        y: -20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-      },
-      "-=0.8",
-    );
+    // Fade in nav instantly - no delay
+    .to(".nav", { opacity: 1, duration: 0.01 }, 0);
 
   // 5. ScrollTrigger Stagger for Industry Lists
   const sections = document.querySelectorAll(".ind-section");
