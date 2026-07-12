@@ -1424,32 +1424,6 @@ body {
   margin: 0 auto;
 }
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #f0f0f0;
-  color: #000000;
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow:
-    6px 6px 15px #d1d1d1,
-    -6px -6px 15px #ffffff;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.05);
-  box-shadow:
-    8px 8px 20px #d1d1d1,
-    -8px -8px 20px #ffffff;
-}
 
 /* --- DESIGN & ENGINEERING PAGE STYLES --- */
 
@@ -1960,23 +1934,59 @@ body {
   :root {
     --spacing-edge: 1rem;
   }
-  .nav {
-    padding: 0.5rem;
-    flex-direction: row;
-    gap: 0.25rem;
-    border-radius: 1.5rem;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 95vw;
+  /* ─── BOTTOM APP BAR (Mobile Nav) ─── */
+  body {
+    padding-bottom: 90px; /* Space for bottom nav */
   }
+
+  .page-header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0; /* Remove top padding on mobile */
+  }
+
+  .nav {
+    padding: 1rem 1rem 1.5rem 1rem; /* Extra padding at bottom for iOS home bar */
+    flex-direction: row;
+    border-radius: 2rem 2rem 0 0; /* Curve only top corners */
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.9);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__arrow {
+    display: none; /* Hide arrows on mobile */
+  }
+
+  .nav__links-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    padding-bottom: 0.5rem; /* Space for scrollbar if any */
+  }
+
   .nav__links {
-    gap: 1rem;
+    gap: 0.5rem;
     flex-wrap: nowrap;
     justify-content: flex-start;
     margin: 0;
+    padding: 0 1rem;
   }
+
   .nav__link {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    scroll-snap-align: start;
+    white-space: nowrap;
   }
 
   .glass-hero__overlay {
