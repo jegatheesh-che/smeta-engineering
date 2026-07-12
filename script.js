@@ -19,8 +19,18 @@ if (typeof Lenis !== "undefined") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Preloader Logic
+  if (document.querySelector('.preloader')) {
+    const preloaderTl = gsap.timeline();
+    preloaderTl
+      .to('.preloader__progress', { width: "100%", duration: 1.5, ease: "power2.inOut" })
+      .to('.preloader__title', { opacity: 0, y: -20, duration: 0.5 }, "-=0.5")
+      .to('.preloader', { yPercent: -100, duration: 1.2, ease: "power4.inOut" })
+      .set('.preloader', { display: "none" });
+  }
+
   // The "Editorial/Luxury" Vibe: Slow, elegant easing, clip-path reveals, no bounces.
-  const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+  const tl = gsap.timeline({ defaults: { ease: "power3.inOut" }, delay: 2.2 });
 
   // 1. Reveal image via clip path (from bottom up)
   tl.to(

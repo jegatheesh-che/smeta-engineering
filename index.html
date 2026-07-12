@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smeta Engineering Services</title>
+    <title>Smeta Engineering Services | Home</title>
+
+    <meta name="description" content="Smeta Engineering Services Private Limited (SESPL) offers premium multi-discipline design, engineering, and bidding services." />
+    <meta property="og:title" content="Smeta Engineering Services | Home" />
+    <meta property="og:description" content="Smeta Engineering Services Private Limited (SESPL) offers premium multi-discipline design, engineering, and bidding services." />
+    <meta property="og:type" content="website" />
+    <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap"
@@ -11,6 +20,14 @@
     />
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__content">
+        <h2 class="preloader__title">SESPL</h2>
+        <div class="preloader__bar"><div class="preloader__progress"></div></div>
+      </div>
+    </div>
+
     <div class="bg-animated">
       <div class="fluid-blob fluid-blob-1"></div>
       <div class="fluid-blob fluid-blob-2"></div>
@@ -440,11 +457,10 @@
         rel="noopener noreferrer"
         class="video-wrapper"
       >
-        <img
-          src="optimized/Capture.PNG"
+        <img           src="optimized/Capture.PNG"
           alt="Video Cover"
           class="video-cover"
-        />
+        / loading="lazy" decoding="async">
         <div class="video-overlay">
           <div class="glass-play-btn">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -494,11 +510,10 @@
         <div class="footer__col">
           <h3 class="footer__title">ISO 9001:2015<br />CERTIFIED</h3>
           <div class="footer__badges">
-            <img
-              src="optimized/smeta-certificate.webp"
+            <img               src="optimized/smeta-certificate.webp"
               alt="ISO 9001:2015"
               class="footer__badge"
-            />
+            / loading="lazy" decoding="async">
             <div class="footer__sectigo">
               <span class="sectigo-icon">S</span>
               <div class="sectigo-text">
@@ -581,12 +596,11 @@
 
     <div class="lightbox" id="lightbox">
       <span class="lightbox__close" id="lightbox-close">&times;</span>
-      <img
-        class="lightbox__img"
+      <img         class="lightbox__img"
         id="lightbox-img"
         src=""
         alt="Full size image"
-      />
+      / loading="lazy" decoding="async">
     </div>
 
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
