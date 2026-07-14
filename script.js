@@ -544,4 +544,108 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     );
   }
+
+  // Footer Animated Line
+  const footerLine = document.querySelector(".footer__animated-line");
+  if (footerLine) {
+    gsap.to(footerLine, {
+      width: "100%",
+      duration: 1.5,
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 95%",
+      },
+    });
+  }
+
+  // Contact Page Animations
+  const contactHero = document.querySelector(".contact-hero__overlay");
+  if (contactHero) {
+    gsap.from(contactHero.children, {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      delay: 0.2
+    });
+  }
+
+  const contactForm = document.querySelector(".contact-form-container");
+  if (contactForm) {
+    gsap.from(contactForm.children, {
+      scrollTrigger: {
+        trigger: contactForm,
+        start: "top 80%",
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out"
+    });
+  }
+
+  const contactDetails = document.querySelector(".contact-details-container");
+  if (contactDetails) {
+    gsap.from(contactDetails.children, {
+      scrollTrigger: {
+        trigger: contactDetails,
+        start: "top 80%",
+      },
+      x: 40,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out"
+    });
+  }
+
 });
+
+// Certificate Pro Lightbox Functions
+window.openLightbox = function(src) {
+  const lightbox = document.getElementById('certificateLightbox');
+  const img = document.getElementById('lightboxImage');
+  const wrapper = document.querySelector('.lightbox__content-wrapper');
+  
+  if (lightbox && img && wrapper) {
+    img.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Lock scrolling
+    
+    // GSAP Animate in
+    gsap.to(lightbox, { opacity: 1, duration: 0.4, ease: "power2.out" });
+    gsap.to(wrapper, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)", delay: 0.1 });
+    
+    // Add Esc key listener
+    document.addEventListener('keydown', handleEsc);
+  }
+};
+
+window.closeLightbox = function() {
+  const lightbox = document.getElementById('certificateLightbox');
+  const wrapper = document.querySelector('.lightbox__content-wrapper');
+  
+  if (lightbox && wrapper) {
+    // GSAP Animate out
+    gsap.to(wrapper, { opacity: 0, scale: 0.9, duration: 0.3, ease: "power2.in" });
+    gsap.to(lightbox, { 
+      opacity: 0, 
+      duration: 0.4, 
+      ease: "power2.in", 
+      onComplete: () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = ''; // Unlock scrolling
+        document.removeEventListener('keydown', handleEsc);
+      }
+    });
+  }
+};
+
+function handleEsc(e) {
+  if (e.key === "Escape") {
+    closeLightbox();
+  }
+}

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="bidding-support.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -55,15 +55,18 @@
         <div class="nav__links-container">
           <div class="nav__links">
             <a href="index.html" class="nav__link">Home</a>
-            <a href="bidding-support.html" class="nav__link nav__link--active"
-              >Bidding Support</a
-            >
-            <a href="design-and-engineering.html" class="nav__link"
-              >Design and Engineering</a
-            >
+            <div class="nav__dropdown">
+              <button class="nav__dropdown-toggle nav__link nav__link--active" onclick="this.parentElement.classList.toggle('is-open')">
+                Services <span class="nav__dropdown-icon">▼</span>
+              </button>
+              <div class="nav__dropdown-menu">
+                <a href="bidding-support.html" class="nav__dropdown-item nav__dropdown-item--active">Bidding Support</a>
+                <a href="design-and-engineering.html" class="nav__dropdown-item">Design and Engineering</a>
+              </div>
+            </div>
             <a href="industries.html" class="nav__link">Industries Served</a>
             <a href="projects.html" class="nav__link">Projects</a>
-            <a href="#footer" class="nav__link">Contact Us</a>
+            <a href="contact.html" class="nav__link">Contact Us</a>
           </div>
         </div>
         <button class="nav__arrow nav__arrow--right" aria-label="Scroll right">
@@ -402,124 +405,36 @@
 
     <!-- Footer copied from index.html -->
     <footer id="footer" class="footer">
-      <div class="footer__container">
-        <!-- Col 1 -->
-        <div class="footer__col">
-          <h3 class="footer__title">DESIGN &<br />ENGINEERING</h3>
-          <ul class="footer__list">
-            <li>Civil / Structural</li>
-            <li>Architecture</li>
-            <li>Process</li>
-            <li>Piping</li>
-            <li>HVAC</li>
-            <li>Fire Protection</li>
-            <li>Electrical</li>
-            <li>Plumbing</li>
-            <li>Instrumentation & control</li>
-            <li>Telecommunication</li>
-          </ul>
-        </div>
-
-        <!-- Col 2 -->
-        <div class="footer__col">
-          <h3 class="footer__title">BIDDING SUPPORT</h3>
-          <ul class="footer__list">
-            <li>Quantity Survey</li>
-            <li>Estimation & Costing</li>
-            <li>Review Scope of Work / Specification</li>
-            <li>Bid Clarification</li>
-            <li>Request For Quotation</li>
-            <li>Evaluation of Supplier Quotation</li>
-            <li>Resource Planning</li>
-            <li>Contract Review</li>
-          </ul>
-        </div>
-
-        <!-- Col 3 -->
-        <div class="footer__col">
-          <h3 class="footer__title">ISO 9001:2015<br />CERTIFIED</h3>
-          <div class="footer__badges">
-            <img               src="optimized/smeta-certificate.webp"
-              alt="ISO 9001:2015"
-              class="footer__badge"
-            / loading="lazy" decoding="async">
-            <div class="footer__sectigo">
-              <span class="sectigo-icon">S</span>
-              <div class="sectigo-text">
-                SECURED BY<br /><strong>SECTIGO</strong>
-              </div>
-            </div>
-          </div>
-          <a href="#" class="footer__btn-download">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-            </svg>
-            DOWNLOAD PROFILE
-          </a>
-        </div>
-
-        <!-- Col 4 -->
-        <div class="footer__col">
+      <div class="footer__animated-line"></div>
+      <div class="footer__container" style="grid-template-columns: 1fr;">
+        <div class="footer__col" style="text-align: center; max-width: 900px; margin: 0 auto;">
           <h3 class="footer__title">GET IN TOUCH</h3>
-          <p class="footer__text">
-            Feel free to call us at any time. We can be reached during normal
-            business hours..
+          <p class="footer__text" style="display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 0;">
+            Feel free to call us at any time. We can be reached during normal business hours.
+            <strong style="display: inline-flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>CALL :</strong> +91 462 290 8228
           </p>
-          <div class="footer__contact">
-            <p>
-              <strong
-                ><svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
-                  />
-                </svg>
-                CALL :</strong
-              >
-              +91 462 290 8228
-            </p>
-            <p>
-              <strong
-                ><svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
-                  />
-                </svg>
-                FAX :</strong
-              >
-              +91 462 290 8228
-            </p>
-          </div>
-          <div class="footer__socials-new">
-            <a href="#" class="social-btn facebook" aria-label="Facebook">f</a>
-            <a href="#" class="social-btn linkedin" aria-label="LinkedIn">in</a>
-          </div>
         </div>
       </div>
-
       <div class="footer__bottom">
         <p>
-          Copyright &copy; All Rights Reserved. Smeta Engineering Services
-          Private Limited
+          Copyright &copy; All Rights Reserved. Smeta Engineering Services Private Limited
         </p>
       </div>
-
-      
     </footer>
 
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+      <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/914622908228" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.878-.788-1.47-1.761-1.643-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+      </svg>
+    </a>
   </body>
 </html>
+
 
