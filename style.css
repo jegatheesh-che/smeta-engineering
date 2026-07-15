@@ -432,6 +432,7 @@ body {
 }
 
 .hero__text-col {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -440,6 +441,50 @@ body {
   background: var(--color-bg);
   border: none;
   max-width: 550px;
+}
+
+.hero__logo-wrapper {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.hero__logo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  box-shadow: 0 0 8px rgba(168, 148, 115, 0.5);
+  animation: rotateBorder 8s infinite linear;
+  z-index: 1;
+}
+
+.hero__logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero__eyebrow {
@@ -2565,6 +2610,66 @@ body {
   height: 100%;
   width: 0%;
   background: var(--color-accent);
+}
+
+.footer__logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  border: 2px solid var(--color-accent);
+}
+
+.contact__logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 4rem 0 1rem 0;
+}
+
+.contact__logo-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.contact__logo-text {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  color: #000000; /* Black for Private Limited */
+  line-height: 1.4;
+}
+
+.contact__logo-text strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000000; /* Black for Smeta Engineering Services */
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.2rem;
+  text-shadow: none; /* Keep black text crisp */
+}
+
+.contact__logo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 4px solid rgba(212, 175, 55, 0.2); /* Bright gold base */
+  border-top-color: #d4af37; /* Bright gold rotating part */
+  border-bottom-color: #d4af37; /* Bright gold rotating part */
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25); /* Minimal shadow in bright gold */
+  animation: rotateBorder 8s infinite linear;
+  z-index: 1;
 }
 
 /* WhatsApp Float */

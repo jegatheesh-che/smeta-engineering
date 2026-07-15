@@ -13,8 +13,8 @@
     <meta property="og:image:height" content="630" />
     <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
     <link rel="canonical" href="https://YOUR-DOMAIN/contact.html" />
-    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
-    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
+    <link rel="icon" type="image/jpeg" href="optimized/logo.jpeg" />
+    <link rel="apple-touch-icon" href="optimized/logo.jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap" rel="stylesheet" />
@@ -170,6 +170,17 @@
               <svg class="contact-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" id="submitBtnSpinner" style="display:none;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
             </button>
           </form>
+
+          <!-- Rotating Logo Below Form -->
+          <div class="contact__logo-container">
+            <div class="contact__logo-wrapper">
+              <img src="optimized/logo.jpeg" alt="Smeta Engineering Logo" class="hero__logo" />
+            </div>
+            <div class="contact__logo-text">
+              <strong>Smeta Engineering Services</strong>
+              Private Limited
+            </div>
+          </div>
         </div>
 
         <!-- Right Column: Office Details -->
@@ -281,7 +292,7 @@
           submitBtnIcon.style.display = 'none';
           submitBtnSpinner.style.display = 'inline-block';
 
-          fetch("https://formsubmit.co/ajax/issac@smetaengineeringservices.com", {
+          fetch("https://formsubmit.co/ajax/jegatheesh.s1110@gmail.com", {
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
@@ -301,9 +312,12 @@
           })
           .catch(error => {
             console.error("Form submission error:", error);
-            // Show success anyway for local testing purposes if network fails
-            contactForm.style.display = 'none';
-            contactSuccess.style.display = 'block';
+            alert("Oops! FormSubmit blocked the request. This usually happens if you open the file directly (file://) instead of using a local web server. Please test on a live server.");
+            
+            submitBtn.disabled = false;
+            submitBtnText.textContent = 'SEND MESSAGE';
+            submitBtnIcon.style.display = 'inline-block';
+            submitBtnSpinner.style.display = 'none';
           });
         });
       }

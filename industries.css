@@ -98,13 +98,12 @@
 
 .ind-section__name {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-style: italic;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
   margin: 0;
-  color: var(--color-accent);
+  color: #000000;
 }
 
 /* Right side (Scrolling lists) */
