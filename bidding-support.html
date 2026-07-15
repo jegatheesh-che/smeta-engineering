@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bidding Support | Smeta Engineering Services</title>
-
     <meta name="description" content="Expert bidding support and engineering consultancy services to ensure your proposals are technically and commercially viable." />
     <meta property="og:title" content="Bidding Support | Smeta Engineering Services" />
     <meta property="og:description" content="Expert bidding support and engineering consultancy services to ensure your proposals are technically and commercially viable." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="optimized/bidding_support_hero_v2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
+    <link rel="canonical" href="https://YOUR-DOMAIN/bidding-support.html" />
+    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
+    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
     <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="bidding-support.css" />
     <link
@@ -24,7 +29,7 @@
     <!-- Preloader -->
     <div class="preloader">
       <div class="preloader__content">
-        <h2 class="preloader__title">SESPL</h2>
+        <h2 class="preloader__title">SMETA</h2>
         <div class="preloader__bar"><div class="preloader__progress"></div></div>
       </div>
     </div>
@@ -34,11 +39,7 @@
       <div class="fluid-blob fluid-blob-2"></div>
       <div class="fluid-blob fluid-blob-3"></div>
       <div class="fluid-blob moving-shadow"></div>
-      <svg
-        class="curved-lines"
-        viewBox="0 0 1000 1000"
-        preserveAspectRatio="none"
-      >
+      <svg class="curved-lines" viewBox="0 0 1000 1000" preserveAspectRatio="none">
         <path class="line line-1" d="M0,300 C300,500 700,100 1000,300" />
         <path class="line line-2" d="M0,500 C400,200 600,800 1000,500" />
         <path class="line line-3" d="M0,700 C300,900 700,500 1000,700" />
@@ -49,9 +50,7 @@
     <!-- Navigation -->
     <header class="page-header">
       <nav class="nav">
-        <button class="nav__arrow nav__arrow--left" aria-label="Scroll left">
-          &#8249;
-        </button>
+        <button class="nav__arrow nav__arrow--left" aria-label="Scroll left">&#8249;</button>
         <div class="nav__links-container">
           <div class="nav__links">
             <a href="index.html" class="nav__link">Home</a>
@@ -69,341 +68,167 @@
             <a href="contact.html" class="nav__link">Contact Us</a>
           </div>
         </div>
-        <button class="nav__arrow nav__arrow--right" aria-label="Scroll right">
-          &#8250;
-        </button>
+        <button class="nav__arrow nav__arrow--right" aria-label="Scroll right">&#8250;</button>
       </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="page-content">
-      <div class="glass-hero">
-        <img
-          src="optimized/technical drawing industrial.webp"
-          alt="Bidding Support"
-          class="glass-hero__img"
-        />
-        <div class="glass-hero__overlay">
-          <h1 class="glass-hero__title">BIDDING SUPPORT</h1>
-          <p class="glass-hero__text">
-            We provide tailor made bidding support services to suit your
-            requirements. Our team will work as an integral part of your
-            organization and not as an external agency. SESPL can also assist
-            your existing tendering team when time is a constraint to submit the
-            bids. SESPL readily awaits to extend professional support meeting
-            all your bidding requirements instantly.
+
+      <!-- ── HERO: Two simple boxes ── -->
+      <section class="content-box">
+
+        <!-- Left: white content box -->
+        <div class="content-box__left">
+          <h1 class="content-box__title">
+            <span class="content-box__row"><span class="content-box__word cb-word--black">BIDDING</span></span>
+            <span class="content-box__row"><span class="content-box__word cb-word--gold">SUPPORT</span></span>
+          </h1>
+          <div class="content-box__rule"></div>
+          <p class="content-box__desc">
+            We provide tailor made bidding support services to suit your requirements.
+            Our team will work as an integral part of your organization and not as an
+            external agency. SESPL can also assist your existing tendering team when
+            time is a constraint to submit the bids. SESPL readily awaits to extend
+            professional support meeting all your bidding requirements instantly.
           </p>
         </div>
-      </div>
+
+        <!-- Right: image box -->
+        <div class="content-box__right">
+          <div class="content-box__img-clip">
+            <img
+              src="optimized/bidding_support_hero_v2.png"
+              alt="Bidding Support Professionals"
+              class="content-box__img"
+            />
+          </div>
+        </div>
+
+      </section>
+
     </main>
 
-    <!-- Services Marquee Section -->
-    <section class="bidding-marquee-section">
-      <h2 class="bidding-marquee__title">OUR BIDDING SUPPORT SERVICES</h2>
-      <div class="bidding-marquee__container">
-        <div class="bidding-marquee__track">
-          <!-- Group 1 -->
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Quantity Survey</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/technical drawing industrial.webp"
-                alt="Quantity Survey"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Perform material take off from drawings</li>
-                <li>Prepare bill of quantity</li>
-              </ul>
-            </div>
+    <!-- Services Grid Section -->
+    <section class="bidding-services">
+      <h2 class="bs-title">OUR BIDDING SUPPORT SERVICES</h2>
+      
+      <div class="bs-grid">
+        <!-- Card 1 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/technical drawing industrial.webp" alt="Quantity Survey" class="bs-card__img" loading="lazy" />
           </div>
-
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Bid Clarification</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/engineering blueprint aesthetic.webp"
-                alt="Bid Clarification"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>
-                  Obtain clarification on missing information, contradictory
-                  statement, vague technical details
-                </li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Quantity Survey</h3>
+            <ul class="bs-card__list">
+              <li>Perform material take off from drawings</li>
+              <li>Prepare bill of quantity</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Request For Quotation</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/pipeline construction site photo-800w.webp"
-                alt="Request For Quotation"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Prepare and issue RFQ to suppliers / subcontractors</li>
-                <li>
-                  Follow up and obtain suppliers / subcontractors proposal
-                </li>
-              </ul>
-            </div>
+        <!-- Card 2 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/engineering blueprint aesthetic.webp" alt="Bid Clarification" class="bs-card__img" loading="lazy" />
           </div>
-
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">
-              Review Scope of Work / Specification
-            </h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/mega construction project aerial-800w.webp"
-                alt="Review Scope of Work"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Identify risks if any</li>
-                <li>Consolidate deviations / exceptions</li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Bid Clarification</h3>
+            <ul class="bs-card__list">
+              <li>Obtain clarification on missing information, contradictory statement, vague technical details</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">
-              Evaluation of Supplier Quotation
-            </h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/steel structure construction photography-800w.webp"
-                alt="Evaluation of Supplier Quotation"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Check compliance to the specifications</li>
-                <li>Review commercial terms</li>
-                <li>Choose technically compliant proposal</li>
-              </ul>
-            </div>
+        <!-- Card 3 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/pipeline construction site photo-800w.webp" alt="Request For Quotation" class="bs-card__img" loading="lazy" />
           </div>
-
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Estimation & Costing</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/LNG plant industrial photography-800w.webp"
-                alt="Estimation and Costing"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Cost comparison of Suppliers / Subcontractors proposals</li>
-                <li>
-                  Cost estimation in accordance with industry standard norms
-                </li>
-                <li>Direct and indirect cost estimates</li>
-                <li>Prepare price schedule</li>
-                <li><strong>Resource Planning</strong></li>
-                <li>Manning schedule & Equipment deployment</li>
-                <li>Utilities consumption</li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Request For Quotation</h3>
+            <ul class="bs-card__list">
+              <li>Prepare and issue RFQ to suppliers / subcontractors</li>
+              <li>Follow up and obtain suppliers / subcontractors proposal</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Contract Review</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/marine engineering photography-800w.webp"
-                alt="Contract Review"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Highlight risky terms & conditions</li>
-              </ul>
-            </div>
+        <!-- Card 4 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/mega construction project aerial-800w.webp" alt="Review Scope of Work" class="bs-card__img" loading="lazy" />
           </div>
-
-          <!-- Group 2 (Duplicate for infinite scroll) -->
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Quantity Survey</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/technical drawing industrial.webp"
-                alt="Quantity Survey"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Perform material take off from drawings</li>
-                <li>Prepare bill of quantity</li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Review Scope of Work / Specification</h3>
+            <ul class="bs-card__list">
+              <li>Identify risks if any</li>
+              <li>Consolidate deviations / exceptions</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Bid Clarification</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/engineering blueprint aesthetic.webp"
-                alt="Bid Clarification"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>
-                  Obtain clarification on missing information, contradictory
-                  statement, vague technical details
-                </li>
-              </ul>
-            </div>
+        <!-- Card 5 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/steel structure construction photography-800w.webp" alt="Evaluation of Supplier Quotation" class="bs-card__img" loading="lazy" />
           </div>
-
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Request For Quotation</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/pipeline construction site photo-800w.webp"
-                alt="Request For Quotation"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Prepare and issue RFQ to suppliers / subcontractors</li>
-                <li>
-                  Follow up and obtain suppliers / subcontractors proposal
-                </li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Evaluation of Supplier Quotation</h3>
+            <ul class="bs-card__list">
+              <li>Check compliance to the specifications</li>
+              <li>Review commercial terms</li>
+              <li>Choose technically compliant proposal</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">
-              Review Scope of Work / Specification
-            </h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/mega construction project aerial-800w.webp"
-                alt="Review Scope of Work"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Identify risks if any</li>
-                <li>Consolidate deviations / exceptions</li>
-              </ul>
-            </div>
+        <!-- Card 6 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/LNG plant industrial photography-800w.webp" alt="Estimation and Costing" class="bs-card__img" loading="lazy" />
           </div>
-
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">
-              Evaluation of Supplier Quotation
-            </h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/steel structure construction photography-800w.webp"
-                alt="Evaluation of Supplier Quotation"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Check compliance to the specifications</li>
-                <li>Review commercial terms</li>
-                <li>Choose technically compliant proposal</li>
-              </ul>
-            </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Estimation &amp; Costing</h3>
+            <ul class="bs-card__list">
+              <li>Cost comparison of Suppliers / Subcontractors proposals</li>
+              <li>Cost estimation in accordance with industry standard norms</li>
+              <li>Direct and indirect cost estimates</li>
+              <li>Prepare price schedule</li>
+            </ul>
           </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Estimation & Costing</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/LNG plant industrial photography-800w.webp"
-                alt="Estimation and Costing"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Cost comparison of Suppliers / Subcontractors proposals</li>
-                <li>
-                  Cost estimation in accordance with industry standard norms
-                </li>
-                <li>Direct and indirect cost estimates</li>
-                <li>Prepare price schedule</li>
-                <li><strong>Resource Planning</strong></li>
-                <li>Manning schedule & Equipment deployment</li>
-                <li>Utilities consumption</li>
-              </ul>
-            </div>
+        <!-- Card 7 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/industrial plant night photography-800w.webp" alt="Resource Planning" class="bs-card__img" loading="lazy" />
           </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Resource Planning</h3>
+            <ul class="bs-card__list">
+              <li>Manning schedule &amp; Equipment deployment</li>
+              <li>Utilities consumption</li>
+            </ul>
+          </div>
+        </div>
 
-          <div
-            class="neo-box marquee-card"
-            onclick="this.classList.toggle('expanded')"
-          >
-            <h3 class="marquee-card__title">Contract Review</h3>
-            <div class="marquee-card__content">
-              <img
-                src="optimized/marine engineering photography-800w.webp"
-                alt="Contract Review"
-                class="marquee-card__img"
-                loading="lazy"
-              />
-              <ul>
-                <li>Highlight risky terms & conditions</li>
-              </ul>
-            </div>
+        <!-- Card 8 -->
+        <div class="bs-card">
+          <div class="bs-card__img-wrap">
+            <img src="optimized/marine engineering photography-800w.webp" alt="Contract Review" class="bs-card__img" loading="lazy" />
+          </div>
+          <div class="bs-card__content">
+            <h3 class="bs-card__title">Contract Review</h3>
+            <ul class="bs-card__list">
+              <li>Highlight risky terms &amp; conditions</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer copied from index.html -->
+    <!-- Footer -->
     <footer id="footer" class="footer">
       <div class="footer__animated-line"></div>
       <div class="footer__container" style="grid-template-columns: 1fr;">
@@ -411,16 +236,16 @@
           <h3 class="footer__title">GET IN TOUCH</h3>
           <p class="footer__text" style="display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 0;">
             Feel free to call us at any time. We can be reached during normal business hours.
-            <strong style="display: inline-flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
-                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                </svg>CALL :</strong> +91 462 290 8228
+            <strong style="display: inline-flex; align-items: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+              </svg>CALL :
+            </strong> +91 462 290 8228
           </p>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>
-          Copyright &copy; All Rights Reserved. Smeta Engineering Services Private Limited
-        </p>
+        <p>Copyright &copy; All Rights Reserved. Smeta Engineering Services Private Limited</p>
       </div>
     </footer>
 
@@ -428,7 +253,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
-      <!-- WhatsApp Floating Button -->
+
+    <!-- Hero entrance animation -->
+    <script>
+    (function () {
+      function run() {
+        if (typeof gsap === 'undefined') return;
+        var delay = document.querySelector('.preloader') ? 2.6 : 0.3;
+
+        var tl = gsap.timeline({ delay: delay, defaults: { ease: 'power3.out' } });
+
+        /* Title words rise from clip */
+        tl.to('.content-box__word', {
+          y: '0%',
+          duration: 1.1,
+          stagger: 0.14,
+          ease: 'power4.out'
+        })
+        /* Gold rule expands */
+        .to('.content-box__rule', {
+          scaleX: 1,
+          duration: 0.7,
+          ease: 'power2.inOut'
+        }, '-=0.6')
+        /* Description fades up */
+        .to('.content-box__desc', {
+          opacity: 1,
+          y: 0,
+          duration: 0.9
+        }, '-=0.5')
+        /* Image clips open upward */
+        .to('.content-box__img-clip', {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1.3,
+          ease: 'power4.inOut'
+        }, '-=1.3')
+        /* Image settles (zoom out) */
+        .to('.content-box__img', {
+          scale: 1,
+          duration: 2.2,
+          ease: 'power2.out'
+        }, '-=1.2');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else {
+        run();
+      }
+    })();
+    </script>
+
+    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/914622908228" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.878-.788-1.47-1.761-1.643-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
@@ -436,5 +312,3 @@
     </a>
   </body>
 </html>
-
-

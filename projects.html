@@ -9,11 +9,19 @@
     <meta property="og:title" content="Our Projects | Smeta Engineering Services" />
     <meta property="og:description" content="Discover the world-class engineering and design projects completed by Smeta Engineering Services." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="optimized/projects_hero_v2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
+    <link rel="canonical" href="https://YOUR-DOMAIN/projects.html" />
+    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
+    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
     <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bidding-support.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap"
       rel="stylesheet"
@@ -23,7 +31,7 @@
     <!-- Preloader -->
     <div class="preloader">
       <div class="preloader__content">
-        <h2 class="preloader__title">SESPL</h2>
+        <h2 class="preloader__title">SMETA</h2>
         <div class="preloader__bar"><div class="preloader__progress"></div></div>
       </div>
     </div>
@@ -78,15 +86,16 @@
 
     <!-- Main Content -->
     <main class="page-content pj-page-content">
-      <div class="glass-hero pj-hero">
-        <img
-          src="optimized/mega construction project aerial-800w.webp"
-          alt="Global Projects"
-          class="glass-hero__img"
-        />
-        <div class="glass-hero__overlay">
-          <h1 class="glass-hero__title">OUR PROJECTS</h1>
-          <p class="glass-hero__text">
+      <!-- ── HERO: Two simple boxes ── -->
+      <section class="content-box">
+        <!-- Left: white content box -->
+        <div class="content-box__left">
+          <h1 class="content-box__title">
+            <span class="content-box__row"><span class="content-box__word cb-word--black">OUR</span></span>
+            <span class="content-box__row"><span class="content-box__word cb-word--gold">PROJECTS</span></span>
+          </h1>
+          <div class="content-box__rule"></div>
+          <p class="content-box__desc">
             Following projects were executed for clients in different parts of
             the world.<br /><br />Winning the confidence of customers and their
             satisfaction is vital for us. The top management of Smeta
@@ -95,7 +104,18 @@
             service and commitment.
           </p>
         </div>
-      </div>
+
+        <!-- Right: image box -->
+        <div class="content-box__right">
+          <div class="content-box__img-clip">
+            <img
+              src="optimized/projects_hero_v2.png"
+              alt="Global Projects"
+              class="content-box__img"
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Stats Strip -->
@@ -122,12 +142,12 @@
       <div class="pj-accordion expanded">
         <div class="pj-accordion-header">
           <div class="pj-accordion-header__bg">
-            <img               src="optimized/offshore oil platform photography-800w.webp"
+            <img src="optimized/offshore oil platform photography-800w.webp"
               alt="Middle East"
-            / loading="lazy" decoding="async">
+              loading="lazy" decoding="async" />
           </div>
           <div class="pj-accordion-header__content">
-            <h2 class="pj-accordion-header__title">MIDDLE EAST</h2>
+            <h3 class="pj-accordion-header__title">MIDDLE EAST</h3>
             <div class="pj-accordion-header__badge">5 Projects</div>
           </div>
           <div class="pj-accordion-header__icon">&#9660;</div>
@@ -153,12 +173,12 @@
       <div class="pj-accordion">
         <div class="pj-accordion-header">
           <div class="pj-accordion-header__bg">
-            <img               src="optimized/industrial plant night photography-800w.webp"
+            <img src="optimized/industrial plant night photography-800w.webp"
               alt="Russia"
-            / loading="lazy" decoding="async">
+              loading="lazy" decoding="async" />
           </div>
           <div class="pj-accordion-header__content">
-            <h2 class="pj-accordion-header__title">RUSSIA</h2>
+            <h3 class="pj-accordion-header__title">RUSSIA</h3>
             <div class="pj-accordion-header__badge">4 Projects</div>
           </div>
           <div class="pj-accordion-header__icon">&#9660;</div>
@@ -185,13 +205,13 @@
       <div class="pj-accordion">
         <div class="pj-accordion-header">
           <div class="pj-accordion-header__bg">
-            <img               src="optimized/petrochemical plant aerial view-800w.webp"
+            <img src="optimized/petrochemical plant aerial view-800w.webp"
               alt="Kazakhstan"
-            / loading="lazy" decoding="async">
+              loading="lazy" decoding="async" />
           </div>
           <div class="pj-accordion-header__content">
-            <h2 class="pj-accordion-header__title">KAZAKHSTAN</h2>
-            <div class="pj-accordion-header__badge">18 Projects</div>
+            <h3 class="pj-accordion-header__title">KAZAKHSTAN</h3>
+            <div class="pj-accordion-header__badge">15 Projects</div>
           </div>
           <div class="pj-accordion-header__icon">&#9660;</div>
         </div>
@@ -241,12 +261,12 @@
       <div class="pj-accordion">
         <div class="pj-accordion-header">
           <div class="pj-accordion-header__bg">
-            <img               src="optimized/pipeline construction site photo-800w.webp"
+            <img src="optimized/pipeline construction site photo-800w.webp"
               alt="Bangladesh"
-            / loading="lazy" decoding="async">
+              loading="lazy" decoding="async" />
           </div>
           <div class="pj-accordion-header__content">
-            <h2 class="pj-accordion-header__title">BANGLADESH</h2>
+            <h3 class="pj-accordion-header__title">BANGLADESH</h3>
             <div class="pj-accordion-header__badge">2 Projects</div>
           </div>
           <div class="pj-accordion-header__icon">&#9660;</div>
@@ -271,12 +291,12 @@
       <div class="pj-accordion">
         <div class="pj-accordion-header">
           <div class="pj-accordion-header__bg">
-            <img               src="optimized/shipyard industrial photography-800w.webp"
+            <img src="optimized/shipyard industrial photography-800w.webp"
               alt="India"
-            / loading="lazy" decoding="async">
+              loading="lazy" decoding="async" />
           </div>
           <div class="pj-accordion-header__content">
-            <h2 class="pj-accordion-header__title">INDIA</h2>
+            <h3 class="pj-accordion-header__title">INDIA</h3>
             <div class="pj-accordion-header__badge">4 Projects</div>
           </div>
           <div class="pj-accordion-header__icon">&#9660;</div>
@@ -298,7 +318,7 @@
     <section class="pj-highlight-section">
       <div class="pj-highlight-content">
         <h2 class="pj-highlight-title">
-          33 PROJECTS. 5 REGIONS. ONE STANDARD OF EXCELLENCE.
+          33 PROJECTS. 5 COUNTRIES. ONE STANDARD OF EXCELLENCE.
         </h2>
       </div>
     </section>
@@ -306,7 +326,7 @@
     <!-- CTA Section -->
     <section class="de-cta-strip">
       <h2 class="de-cta-strip__title">YOUR PROJECT COULD BE NEXT.</h2>
-      <a href="#" class="de-cta-strip__btn">Get in Touch</a>
+        <a href="contact.html" class="de-cta-strip__btn">Get in Touch</a>
     </section>
 
     <!-- Footer copied from index.html -->

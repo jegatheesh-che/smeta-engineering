@@ -9,11 +9,19 @@
     <meta property="og:title" content="Design & Engineering | Smeta Engineering Services" />
     <meta property="og:description" content="High-quality design and engineering services across buildings, oil & gas, petrochemicals, and infrastructure." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="optimized/design_engineering_hero_v2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
+    <link rel="canonical" href="https://YOUR-DOMAIN/design-and-engineering.html" />
+    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
+    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
     <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bidding-support.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap"
       rel="stylesheet"
@@ -76,15 +84,16 @@
 
     <!-- Main Content -->
     <main class="page-content">
-      <div class="glass-hero">
-        <img
-          src="optimized/engineering blueprint aesthetic.webp"
-          alt="Design & Engineering"
-          class="glass-hero__img"
-        />
-        <div class="glass-hero__overlay">
-          <h1 class="glass-hero__title">DESIGN & ENGINEERING</h1>
-          <p class="glass-hero__text">
+      <!-- ── HERO: Two simple boxes ── -->
+      <section class="content-box">
+        <!-- Left: white content box -->
+        <div class="content-box__left">
+          <h1 class="content-box__title">
+            <span class="content-box__row"><span class="content-box__word cb-word--black">DESIGN &</span></span>
+            <span class="content-box__row"><span class="content-box__word cb-word--gold">ENGINEERING</span></span>
+          </h1>
+          <div class="content-box__rule"></div>
+          <p class="content-box__desc">
             Smeta Engineering Services Private Limited (SESPL) offers reliable
             and cost effective design & engineering solutions meeting the
             client’s specifications, local standards and regulations. There is
@@ -93,7 +102,18 @@
             successful completion of the project in time.
           </p>
         </div>
-      </div>
+
+        <!-- Right: image box -->
+        <div class="content-box__right">
+          <div class="content-box__img-clip">
+            <img
+              src="optimized/design_engineering_hero_v2.png"
+              alt="Architectural Blueprint"
+              class="content-box__img"
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Intro Section & Ticker -->
@@ -162,10 +182,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/steel structure construction photography-800w.webp"
+              src="optimized/civil_structural_v2.png"
               alt="Civil / Structural Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="de-discipline-card__content-panel">
@@ -209,10 +228,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/mega construction project aerial-800w.webp"
+              src="optimized/architecture_v2.png"
               alt="Architecture"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
       </article>
@@ -222,10 +240,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/blue industrial photography.webp"
+              src="optimized/hvac_v2.png"
               alt="HVAC Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="de-discipline-card__content-panel">
@@ -270,10 +287,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/industrial pipes blue hour photography-800w.webp"
+              src="optimized/plumbing_v2.png"
               alt="Plumbing Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
       </article>
@@ -283,10 +299,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/engineering schematic dark background-800w.webp"
+              src="optimized/electrical_v2.png"
               alt="Electrical Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="de-discipline-card__content-panel">
@@ -334,10 +349,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/marine engineering photography-800w.webp"
+              src="optimized/fire_protection_v2.png"
               alt="Fire Protection Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
       </article>
@@ -347,10 +361,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/LNG plant industrial photography-800w.webp"
+              src="optimized/process_v2.png"
               alt="Process Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="de-discipline-card__content-panel">
@@ -394,10 +407,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/pipeline construction site photo-800w.webp"
+              src="optimized/piping_v2.png"
               alt="Piping Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
       </article>
@@ -407,10 +419,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/technical drawing industrial.webp"
+              src="optimized/instrumentation_v2.png"
               alt="Instrumentation & Control Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="de-discipline-card__content-panel">
@@ -460,10 +471,9 @@
         <div class="de-discipline-card__image-panel">
           <div class="de-discipline-card__image-wrapper">
             <img
-              src="optimized/CAD wireframe render industrial.webp"
+              src="optimized/telecommunication_v2.png"
               alt="Telecommunication Engineering"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           </div>
         </div>
       </article>
@@ -475,7 +485,7 @@
         <h2 class="de-cta-strip__title">
           EVERY SYSTEM. EVERY DISCIPLINE. ONE PARTNER.
         </h2>
-        <a href="#" class="de-cta-strip__btn">Get in Touch</a>
+        <a href="contact.html" class="de-cta-strip__btn">Get in Touch</a>
       </div>
     </section>
 
@@ -504,6 +514,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Hero entrance animation -->
+    <script>
+    (function () {
+      function run() {
+        if (typeof gsap === 'undefined') return;
+        var delay = document.querySelector('.preloader') ? 2.6 : 0.3;
+
+        var tl = gsap.timeline({ delay: delay, defaults: { ease: 'power3.out' } });
+
+        /* Title words rise from clip */
+        tl.to('.content-box__word', {
+          y: '0%',
+          duration: 1.1,
+          stagger: 0.14,
+          ease: 'power4.out'
+        })
+        /* Gold rule expands */
+        .to('.content-box__rule', {
+          scaleX: 1,
+          duration: 0.7,
+          ease: 'power2.inOut'
+        }, '-=0.6')
+        /* Description fades up */
+        .to('.content-box__desc', {
+          opacity: 1,
+          y: 0,
+          duration: 0.9
+        }, '-=0.5')
+        /* Image clips open upward */
+        .to('.content-box__img-clip', {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1.3,
+          ease: 'power4.inOut'
+        }, '-=1.3')
+        /* Image settles (zoom out) */
+        .to('.content-box__img', {
+          scale: 1,
+          duration: 2.2,
+          ease: 'power2.out'
+        }, '-=1.2');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else {
+        run();
+      }
+    })();
+    </script>
       <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/914622908228" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">

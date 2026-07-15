@@ -9,6 +9,13 @@
     <meta property="og:title" content="Smeta Engineering Services | Home" />
     <meta property="og:description" content="Smeta Engineering Services Private Limited (SESPL) offers premium multi-discipline design, engineering, and bidding services." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="optimized/LNG plant industrial photography.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
+    <link rel="canonical" href="https://YOUR-DOMAIN/index.html" />
+    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
+    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
     <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +25,36 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap"
       rel="stylesheet"
     />
+    <!-- Fix 19: Schema.org Organization — update YOUR-DOMAIN and address before deploying -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Smeta Engineering Services Private Limited",
+      "alternateName": "SESPL",
+      "url": "https://YOUR-DOMAIN",
+      "logo": "https://YOUR-DOMAIN/optimized/smeta-favicon.png",
+      "description": "SESPL is an ISO 9001:2015 certified engineering process outsourcing firm specializing in multi-discipline design, engineering, and bidding support services for construction, oil & gas, and petrochemical industries.",
+      "foundingDate": "2016",
+      "areaServed": ["India", "Middle East", "Russia", "Kazakhstan", "Bangladesh"],
+      "serviceType": ["Bidding Support", "Design Engineering", "Quantity Survey", "Estimation and Costing"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-462-290-8228",
+        "contactType": "customer service"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- Preloader -->
     <div class="preloader">
       <div class="preloader__content">
-        <h2 class="preloader__title">SESPL</h2>
+        <h2 class="preloader__title">SMETA</h2>
         <div class="preloader__bar"><div class="preloader__progress"></div></div>
       </div>
     </div>
@@ -83,7 +114,7 @@
 
           <p class="hero__desc">Forever your engineering associate.</p>
 
-          <a href="#" class="hero__cta">Discover More</a>
+          <a href="#about" class="hero__cta">Discover More</a>
         </div>
 
         <div class="hero__image-col">
@@ -126,7 +157,7 @@
       </div>
     </main>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__layout">
         <div class="about__content">
           <h2 class="about__title">WHO WE ARE</h2>
@@ -523,5 +554,6 @@
     </a>
   </body>
 </html>
+
 
 

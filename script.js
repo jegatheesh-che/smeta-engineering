@@ -19,13 +19,80 @@ if (typeof Lenis !== "undefined") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Fix 11: Mark body as JS-ready so CSS fallback states don't apply
+  document.body.classList.add('js-ready');
+
   // Preloader Logic
-  if (document.querySelector('.preloader')) {
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    const preloaderTitle = document.querySelector('.preloader__title');
+    const text = preloaderTitle.textContent.trim();
+    
+    // Wrap characters in an overflow hidden span for the "rise up" reveal
+    preloaderTitle.innerHTML = text.split('').map(char => 
+      `<span style="display:inline-block; overflow:hidden; vertical-align:top;">
+         <span class="char" style="display:inline-block">${char}</span>
+       </span>`
+    ).join('');
+
+    // Hide old progress bar
+    const oldBar = document.querySelector('.preloader__bar');
+    if (oldBar) oldBar.style.display = 'none';
+
+    const content = document.querySelector('.preloader__content');
+    content.style.position = 'relative';
+    content.style.width = '280px';
+    content.style.height = '280px';
+    content.style.justifyContent = 'center';
+    content.style.gap = '0.5rem';
+
+    // Add a percentage counter
+    const counter = document.createElement('div');
+    counter.style.position = 'relative';
+    counter.style.zIndex = '2';
+    counter.style.fontFamily = 'var(--font-display)';
+    counter.style.fontSize = '1rem';
+    counter.style.letterSpacing = '2px';
+    counter.style.color = 'var(--color-text)';
+    counter.innerText = '0%';
+    content.appendChild(counter);
+
+    preloaderTitle.style.position = 'relative';
+    preloaderTitle.style.zIndex = '2';
+
+    // Create a large circle SVG that wraps the whole word and counter
+    const svgHTML = `
+      <svg class="progress-shape" width="280" height="280" viewBox="0 0 280 280" style="position:absolute; top:0; left:0; pointer-events:none; z-index:0;">
+        <circle cx="140" cy="140" r="138" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"></circle>
+        <circle class="progress-shape__path" cx="140" cy="140" r="138" fill="none" stroke="var(--color-text, #000)" stroke-width="2" stroke-dasharray="868" stroke-dashoffset="868" stroke-linecap="round" transform="rotate(-90 140 140)"></circle>
+      </svg>
+    `;
+    content.insertAdjacentHTML('afterbegin', svgHTML);
+
+    const shapePath = content.querySelector('.progress-shape__path');
+    const shapeSvg = content.querySelector('.progress-shape');
+    const obj = { count: 0 };
     const preloaderTl = gsap.timeline();
+    
     preloaderTl
-      .to('.preloader__progress', { width: "100%", duration: 1.5, ease: "power2.inOut" })
-      .to('.preloader__title', { opacity: 0, y: -20, duration: 0.5 }, "-=0.5")
-      .to('.preloader', { yPercent: -100, duration: 1.2, ease: "power4.inOut" })
+      .fromTo('.preloader__title .char', 
+        { y: "100%" },
+        { y: "0%", duration: 1, stagger: 0.08, ease: 'power3.out' }
+      )
+      .to(obj, { 
+        count: 100, 
+        duration: 1.5, 
+        ease: "power2.inOut",
+        onUpdate: () => {
+          counter.innerText = Math.round(obj.count) + '%';
+        }
+      }, "<0.2")
+      .to(shapePath, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }, "<")
+      .to(shapeSvg, { rotation: 90, duration: 1.5, ease: "power2.inOut" }, "<")
+      .to('.preloader__title .char', { y: "-100%", duration: 0.6, stagger: 0.04, ease: 'power3.in' }, "+=0.3")
+      .to(counter, { opacity: 0, y: -20, duration: 0.4 }, "<")
+      .to(shapeSvg, { opacity: 0, scale: 0.8, duration: 0.4 }, "<")
+      .to('.preloader', { clipPath: "inset(0% 0% 100% 0%)", duration: 1.2, ease: "power4.inOut" }, "-=0.2")
       .set('.preloader', { display: "none" });
   }
 
@@ -402,25 +469,45 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".pj-regions-section")) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Hero clip-path reveal
-    const pjHeroImg = document.querySelector(".pj-hero .glass-hero__img");
-    const pjHeroTitle = document.querySelector(".pj-hero .glass-hero__title");
-    const pjHeroText = document.querySelector(".pj-hero .glass-hero__text");
+    // 1. Hero clip-path reveal (content-box UI)
+    const contentBoxImgClip = document.querySelector('.content-box__img-clip');
+    if (contentBoxImgClip) {
+      // Calculate delay based on preloader existence, same as global
+      const delay = document.querySelector('.preloader') ? 2.6 : 0.3;
+      const pjHeroTl = gsap.timeline({ delay: delay, defaults: { ease: 'power3.out' } });
 
-    if (pjHeroImg) {
-      const pjHeroTl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
       pjHeroTl
-        .fromTo(
-          pjHeroImg,
-          { clipPath: "inset(100% 0% 0% 0%)", scale: 1.1 },
-          { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2 },
-        )
-        .fromTo(
-          [pjHeroTitle, pjHeroText],
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, stagger: 0.2 },
-          "-=1",
-        );
+        /* Title words rise from clip */
+        .to('.content-box__word', {
+          y: '0%',
+          duration: 1.1,
+          stagger: 0.14,
+          ease: 'power4.out'
+        })
+        /* Gold rule expands */
+        .to('.content-box__rule', {
+          scaleX: 1,
+          duration: 0.7,
+          ease: 'power2.inOut'
+        }, '-=0.6')
+        /* Description fades up */
+        .to('.content-box__desc', {
+          opacity: 1,
+          y: 0,
+          duration: 0.9
+        }, '-=0.5')
+        /* Image clips open upward */
+        .to('.content-box__img-clip', {
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1.3,
+          ease: 'power4.inOut'
+        }, '-=1.3')
+        /* Image settles (zoom out) */
+        .to('.content-box__img', {
+          scale: 1,
+          duration: 2.2,
+          ease: 'power2.out'
+        }, '-=1.2');
     }
 
     // 2. Stats Strip Counters
@@ -600,6 +687,55 @@ document.addEventListener("DOMContentLoaded", () => {
       stagger: 0.15,
       ease: "power3.out"
     });
+  }
+
+  // Premium Corporate Hero Logic (Vanilla JS)
+  const premiumHero = document.querySelector(".premium-hero");
+  if (premiumHero) {
+    const animItems = premiumHero.querySelectorAll(".anim-item, .anim-image");
+    const statNums = premiumHero.querySelectorAll(".stat-num");
+
+    // Number counting animation
+    const animateValue = (obj, start, end, duration) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        // easeOutQuart
+        const easeProgress = 1 - Math.pow(1 - progress, 4);
+        obj.innerHTML = Math.floor(easeProgress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          obj.innerHTML = end;
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    const heroObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger reveal animations
+          animItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("is-visible");
+            }, index * 200); // 200ms stagger
+          });
+
+          // Animate statistics numbers
+          statNums.forEach(stat => {
+            const target = parseInt(stat.getAttribute("data-target") || 0, 10);
+            animateValue(stat, 0, target, 2000);
+          });
+
+          // Unobserve after animating once
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    heroObserver.observe(premiumHero);
   }
 
 });

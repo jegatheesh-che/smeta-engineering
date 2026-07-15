@@ -9,12 +9,20 @@
     <meta property="og:title" content="Industries Served | Smeta Engineering Services" />
     <meta property="og:description" content="SESPL offers services across construction, oil & gas, offshore facilities, petrochemical, and power plants." />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="optimized/industries_served_hero_v2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- Fix 7: Replace YOUR-DOMAIN with actual production domain before deploying -->
+    <link rel="canonical" href="https://YOUR-DOMAIN/industries.html" />
+    <link rel="icon" type="image/png" href="optimized/smeta-favicon.png" />
+    <link rel="apple-touch-icon" href="optimized/smeta-favicon.png" />
     <meta name="keywords" content="engineering, design, bidding, construction, oil & gas, SESPL, Smeta" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="industries.css" />
+    <link rel="stylesheet" href="bidding-support.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Contrail+One&display=swap"
       rel="stylesheet"
@@ -24,7 +32,7 @@
     <!-- Preloader -->
     <div class="preloader">
       <div class="preloader__content">
-        <h2 class="preloader__title">SESPL</h2>
+        <h2 class="preloader__title">SMETA</h2>
         <div class="preloader__bar"><div class="preloader__progress"></div></div>
       </div>
     </div>
@@ -80,28 +88,37 @@
     <!-- Main Content -->
     <main class="industries">
       <div class="page-content">
-        <div class="glass-hero">
-          <img
-            src="optimized/LNG plant industrial photography.webp"
-            alt="Industries Served"
-            class="glass-hero__img"
-          />
-          <div class="glass-hero__overlay">
-            <h1 class="glass-hero__title" id="hero-title">
-              INDUSTRIES SERVED<span class="italic">...</span>
+        <!-- ── HERO: Two simple boxes ── -->
+        <section class="content-box">
+          <!-- Left: white content box -->
+          <div class="content-box__left">
+            <h1 class="content-box__title">
+              <span class="content-box__row"><span class="content-box__word cb-word--black">INDUSTRIES</span></span>
+              <span class="content-box__row"><span class="content-box__word cb-word--gold">SERVED</span></span>
             </h1>
-            <p class="glass-hero__text" id="hero-intro">
+            <div class="content-box__rule"></div>
+            <p class="content-box__desc">
               Smeta Engineering Services Private limited (SESPL) offers services
               in the following areas of construction industry.
             </p>
           </div>
-        </div>
+
+          <!-- Right: image box -->
+          <div class="content-box__right">
+            <div class="content-box__img-clip">
+              <img
+              src="optimized/industries_served_hero_v2.png"
+              alt="Industrial Plant"
+              class="content-box__img"
+            />
+            </div>
+          </div>
+        </section>
       </div>
 
       <div class="industries__layout">
         <section class="ind-section">
           <div class="ind-section__index">
-            <h2 class="ind-section__number">01</h2>
             <h3 class="ind-section__name">BUILDINGS</h3>
           </div>
           <div class="ind-section__content">
@@ -118,7 +135,6 @@
 
         <section class="ind-section">
           <div class="ind-section__index">
-            <h2 class="ind-section__number">02</h2>
             <h3 class="ind-section__name">INFRASTRUCTURE</h3>
           </div>
           <div class="ind-section__content">
@@ -134,7 +150,6 @@
 
         <section class="ind-section">
           <div class="ind-section__index">
-            <h2 class="ind-section__number">03</h2>
             <h3 class="ind-section__name">UTILITIES</h3>
           </div>
           <div class="ind-section__content">
@@ -148,7 +163,6 @@
 
         <section class="ind-section">
           <div class="ind-section__index">
-            <h2 class="ind-section__number">04</h2>
             <h3 class="ind-section__name">
               OIL & GAS (ONSHORE & OFFSHORE) FACILITIES
             </h3>
@@ -168,7 +182,6 @@
 
         <section class="ind-section">
           <div class="ind-section__index">
-            <h2 class="ind-section__number">05</h2>
             <h3 class="ind-section__name">
               PETROCHEMICAL / POWER / ALUMINIUM SMELTER / FERTILIZER PLANTS
             </h3>
@@ -237,5 +250,6 @@
     </a>
   </body>
 </html>
+
 
 
