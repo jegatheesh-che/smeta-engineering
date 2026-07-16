@@ -123,6 +123,12 @@ body:not(.js-ready) .content-box__img-clip {
 }
 
 /* ── Responsive ── */
+@media (max-width: 1100px) {
+  .content-box__left {
+    padding: 4rem 3rem;
+  }
+}
+
 @media (max-width: 900px) {
   .content-box {
     grid-template-columns: 1fr;
