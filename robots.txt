@@ -1,0 +1,9 @@
+﻿User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jegatheesh-che.github.io/smeta-engineering/sitemap.xml
+
+# Disallow admin or non-public paths (none currently, but good practice)
+Disallow: /cs-briseis-demo/
+Disallow: /.git/
