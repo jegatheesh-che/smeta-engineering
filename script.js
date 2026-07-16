@@ -1,5 +1,5 @@
 // Initialize Lenis for Smooth Scrolling
-if (typeof Lenis !== "undefined") {
+if (typeof Lenis !== "undefined" && window.innerWidth > 900) {
   const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
