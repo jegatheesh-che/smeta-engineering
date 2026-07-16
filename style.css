@@ -282,7 +282,7 @@ body {
 }
 
 .nav__links-container {
-  overflow-x: auto;
+  overflow: visible;
   scrollbar-width: none;
   -ms-overflow-style: none;
   display: flex;
