@@ -487,6 +487,23 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       );
 
+      const img = card.querySelector(".de-discipline-card__image-wrapper img");
+
+      // Image Zoom-Out (Enter Animation)
+      gsap.fromTo(
+        img,
+        { scale: 1.25 },
+        {
+          scale: 1,
+          duration: 1.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 75%",
+          },
+        }
+      );
+
       // Image Parallax (scrub)
       gsap.to(imgWrapper, {
         yPercent: 20,
