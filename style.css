@@ -1363,7 +1363,7 @@ body {
 .page-header {
   padding: var(--spacing-edge);
   position: relative;
-  z-index: 10;
+  z-index: 9999;
 }
 
 .page-content {
