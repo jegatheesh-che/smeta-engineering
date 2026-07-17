@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Register GSAP Plugins
   gsap.registerPlugin(ScrollTrigger);
 
+  // Hamburger Menu Logic
+  const hamburger = document.querySelector(".nav__hamburger");
+  const nav = document.querySelector(".nav");
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("is-active");
+      document.body.style.overflow = nav.classList.contains("is-active") ? "hidden" : "";
+    });
+  }
+
   // Preloader Logic
   const preloader = document.querySelector('.preloader');
   if (preloader) {
