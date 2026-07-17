@@ -22,6 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fix 11: Mark body as JS-ready so CSS fallback states don't apply
   document.body.classList.add('js-ready');
 
+  // "See More" Card Expansion Logic
+  document.querySelectorAll('.neo-box__read-more').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.neo-box, .values__box');
+      if (card) {
+        card.classList.add('is-expanded');
+        // Prevent background scrolling ONLY on mobile where it acts as a fixed modal
+        if (window.innerWidth <= 768) {
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.neo-box__close').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.neo-box, .values__box');
+      if (card) {
+        card.classList.remove('is-expanded');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
   // Preloader Logic
   const preloader = document.querySelector('.preloader');
   if (preloader) {

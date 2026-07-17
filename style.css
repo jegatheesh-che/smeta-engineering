@@ -937,6 +937,7 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
 }
 
 .neo-box__image {
@@ -982,6 +983,10 @@ body {
 
 .neo-box.is-expanded .neo-box__text p {
   -webkit-line-clamp: unset;
+}
+
+.neo-box.is-expanded .neo-box__read-more {
+  display: none;
 }
 
 .neo-box__read-more {
@@ -1095,6 +1100,10 @@ body {
 
 .values__box.is-expanded .values__text {
   -webkit-line-clamp: unset;
+}
+
+.values__box.is-expanded .neo-box__read-more {
+  display: none;
 }
 
 .values__box .neo-box__close {
