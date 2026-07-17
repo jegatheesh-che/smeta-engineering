@@ -2494,7 +2494,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.85, 0, 0.15, 1);
-    overflow: hidden;
+    overflow: visible;
   }
 
   .nav.is-active {
