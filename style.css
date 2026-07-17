@@ -1111,6 +1111,14 @@ body {
   top: 0;
   right: 0;
 }
+.values__box .neo-box__read-more {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+.values__box .neo-box__read-more:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
 .values__box.is-expanded .neo-box__close {
   display: flex;
 }
@@ -2318,7 +2326,7 @@ body {
     width: 100vw;
     height: 100vh;
     height: 100dvh;
-    z-index: 9999;
+    z-index: 10005;
     border-radius: 0;
     margin: 0;
     padding: 4rem 1.5rem 2rem 1.5rem;
@@ -2365,7 +2373,7 @@ body {
     width: 100vw;
     height: 100vh;
     height: 100dvh;
-    z-index: 9999;
+    z-index: 10005;
     border-radius: 0;
     margin: 0;
     padding: 4rem 1.5rem 2rem 1.5rem;
