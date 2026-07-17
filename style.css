@@ -2402,6 +2402,12 @@ body {
   .glass-hero__text {
     font-size: 0.9rem;
   }
+  .hero__logo-wrapper {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 auto 1.5rem auto;
+  }
   .hero__text-col {
     padding: 2rem;
     border-radius: 1.5rem;
@@ -2809,10 +2815,11 @@ body {
 
 @media (max-width: 900px) {
   .whatsapp-float {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 55px;
-    height: 55px;
+    bottom: 80px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    font-size: 38px;
   }
 
   /* --- MOBILE PERFORMANCE OPTIMIZATIONS --- */
