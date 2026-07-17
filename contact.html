@@ -6,7 +6,7 @@
 
     <!-- ═══ PRIMARY SEO ═══ -->
     <title>Contact Us | Smeta Engineering Services - Engineering Outsourcing India +91 462 290 8228</title>
-    <meta name="description" content="Contact Smeta Engineering Services Pvt Ltd (SESPL). Call +91 462 290 8228 or WhatsApp us. ISO 9001:2015 certified engineering process outsourcing firm serving construction contractors in oil & gas, petrochemical and infrastructure sectors worldwide." />
+    <meta name="description" content="Contact Smeta Engineering Services Private Ltd (SESPL). Call +91 462 290 8228 or WhatsApp us. HD 9001:2015 certified engineering process outsourcing firm serving construction contractors in oil & gas, petrochemical and infrastructure sectors worldwide." />
     <meta name="keywords" content="contact Smeta Engineering, SESPL contact, engineering outsourcing contact India, bidding support contact, +91 462 290 8228, engineering services contact" />
     <meta name="author" content="Smeta Engineering Services Private Limited" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Smeta Engineering Services" />
     <meta property="og:title" content="Contact Us | Smeta Engineering Services - +91 462 290 8228" />
-    <meta property="og:description" content="Get in touch with SESPL. Call or WhatsApp +91 462 290 8228. ISO 9001:2015 certified engineering firm serving clients worldwide." />
+    <meta property="og:description" content="Get in touch with SESPL. Call or WhatsApp +91 462 290 8228. HD 9001:2015 certified engineering firm serving clients worldwide." />
     <meta property="og:url" content="https://jegatheesh-che.github.io/smeta-engineering/contact.html" />
     <meta property="og:image" content="https://jegatheesh-che.github.io/smeta-engineering/optimized/logo.jpeg" />
     <meta property="og:image:width" content="300" />
@@ -28,7 +28,7 @@
     <!-- ═══ TWITTER CARD ═══ -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Contact Smeta Engineering Services | +91 462 290 8228" />
-    <meta name="twitter:description" content="Contact SESPL - ISO 9001:2015 certified engineering outsourcing firm. Call or WhatsApp +91 462 290 8228." />
+    <meta name="twitter:description" content="Contact SESPL - HD 9001:2015 certified engineering outsourcing firm. Call or WhatsApp +91 462 290 8228." />
     <meta name="twitter:image" content="https://jegatheesh-che.github.io/smeta-engineering/optimized/logo.jpeg" />
 
     <!-- ═══ ICONS ═══ -->
@@ -75,34 +75,28 @@
     </script>
     <style>
       body {
-        background-color: #f0f0f0;
         min-height: 100vh;
         display: flex;
-        justify-content: center;
-        padding: 16rem 2rem 6rem 2rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 6rem 0;
         box-sizing: border-box;
-        position: relative; /* For absolute positioning of header */
+        position: relative;
       }
 
+      /* Let page-header span full width so nav is centered at the top */
       .page-header {
-        position: fixed;
-        top: 1.5rem;
-        left: 0;
         width: 100%;
         display: flex;
         justify-content: center;
-        z-index: 1000;
-        pointer-events: none; /* Let clicks pass through the wrapper */
-      }
-
-      .page-header .nav {
-        pointer-events: auto; /* Re-enable clicks on the nav itself */
+        margin-bottom: 4rem; /* Spacing between header and contact form */
       }
 
       .contact-standalone {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 var(--spacing-edge);
       }
 
       .contact-standalone .contact-grid {
@@ -139,7 +133,9 @@
       }
 
       @media (max-width: 900px) {
-        body { padding: 8rem 1.2rem 6rem 1.2rem; }
+        .contact-standalone {
+          padding-top: 4rem; /* Extra space at the top on mobile so the floating pill nav doesn't cover content */
+        }
         .contact-standalone .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
         
         .iso-certificate-wrap {
@@ -149,7 +145,31 @@
       }
     </style>
   </head>
-  <body>
+  <body class="theme-contact">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__content">
+        <img src="optimized/logo.jpeg" alt="Smeta Logo" class="preloader__logo" />
+        <h2 class="preloader__title">SMETA</h2>
+        <div class="preloader__bar"><div class="preloader__progress"></div></div>
+      </div>
+    </div>
+    <div class="bg-animated">
+      <div class="fluid-blob fluid-blob-1"></div>
+      <div class="fluid-blob fluid-blob-2"></div>
+      <div class="fluid-blob fluid-blob-3"></div>
+      <div class="fluid-blob moving-shadow"></div>
+      <svg
+        class="curved-lines"
+        viewBox="0 0 1000 1000"
+        preserveAspectRatio="none"
+      >
+        <path class="line line-1" d="M0,300 C300,500 700,100 1000,300" />
+        <path class="line line-2" d="M0,500 C400,200 600,800 1000,500" />
+        <path class="line line-3" d="M0,700 C300,900 700,500 1000,700" />
+        <path class="line line-4" d="M0,400 C200,600 800,400 1000,600" />
+      </svg>
+    </div>
 
     <!-- Navigation -->
     <header class="page-header">
@@ -230,15 +250,15 @@
               <img src="optimized/logo.jpeg" alt="Smeta Engineering Logo" class="hero__logo" />
             </div>
             <div class="contact__logo-text">
-              <strong>Smeta Engineering Services</strong>
-              Private Limited
+              SMETA ENGINEERING SERVICES<br/>
+              PRIVATE LIMITED
             </div>
           </div>
         </div>
 
         <!-- Right Column: Office Details -->
         <div class="contact-details-container">
-          <h2 class="contact__subtitle">Our Offices</h2>
+
 
           <div class="contact-card">
             <h3 class="contact-card__title">HEADQUARTERS</h3>
@@ -280,10 +300,7 @@
             </a>
           </div>
 
-          <div class="iso-certificate-wrap">
-            <img src="optimized/smeta-certificate.webp" alt="ISO 9001:2015 Certified" loading="lazy" decoding="async">
-            <span>ISO 9001:2015 CERTIFIED</span>
-          </div>
+
         </div>
 
       </div>
@@ -391,11 +408,15 @@
       };
     </script>
       <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/914622908228" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/917708798228" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.878-.788-1.47-1.761-1.643-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-      </svg>
     </a>
+    
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
 

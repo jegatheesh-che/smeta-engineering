@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", () => {
             otherAcc.classList.remove("expanded");
             gsap.to(otherAcc.querySelector(".pj-accordion-body"), {
               height: 0,
-              duration: 0.5,
+              duration: 0.2,
               ease: "power3.inOut",
             });
           }
@@ -608,12 +608,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Toggle current
         if (isExpanded) {
           acc.classList.remove("expanded");
-          gsap.to(body, { height: 0, duration: 0.5, ease: "power3.inOut" });
+          gsap.to(body, { height: 0, duration: 0.2, ease: "power3.inOut" });
         } else {
           acc.classList.add("expanded");
           gsap.to(body, {
             height: "auto",
-            duration: 0.5,
+            duration: 0.2,
             ease: "power3.inOut",
           });
         }

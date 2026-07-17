@@ -31,19 +31,20 @@
 .content-box__title {
   margin: 0 0 2rem;
   font-family: var(--font-display, serif);
-  line-height: 0.9;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-/* Each word lives in an overflow-hidden row for the clip-rise reveal */
 .content-box__row {
   display: block;
   overflow: hidden;
+  margin-bottom: -0.3em;
+  transform: translateZ(0);
 }
 
 .content-box__word {
   display: inline-block;
-  font-size: clamp(4.5rem, 7vw, 7rem);
+  font-size: clamp(3rem, 5.5vw, 6rem);
   font-weight: 700;
   /* initial state – GSAP reveals upward */
   transform: translateY(105%);
@@ -56,12 +57,13 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transform: translateZ(0);
 }
 
 /* Thin gold rule */
 .content-box__rule {
-  width: 64px;
-  height: 3px;
+  width: 40px;
+  height: 1px;
   background: var(--bh-gold);
   margin-bottom: 2rem;
   transform-origin: left center;
