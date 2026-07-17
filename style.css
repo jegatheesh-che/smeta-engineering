@@ -2308,12 +2308,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
     z-index: 9998;
     pointer-events: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav.is-active .nav__links-container {
@@ -2325,13 +2327,15 @@ body {
 
   .nav__links {
     flex-direction: column;
-    gap: 2rem;
-    padding: 0;
+    gap: clamp(1rem, 4vh, 2rem);
+    padding: 7rem 0 4rem 0;
+    margin: auto 0;
     align-items: center;
+    width: 100%;
   }
 
   .nav__link {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem);
     padding: 0.5rem;
     background: none !important;
     border: none !important;
@@ -2375,11 +2379,11 @@ body {
   }
 
   .nav__dropdown-toggle {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
   }
   
   .nav__dropdown-item {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
     opacity: 0.7;
     padding: 0.5rem;
     white-space: normal;
