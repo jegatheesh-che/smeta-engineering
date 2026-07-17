@@ -2700,6 +2700,13 @@ body {
   gap: 4rem;
 }
 
+.contact-form-container {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
 .contact__subtitle {
   font-family: var(--font-display);
   font-size: 2rem;
