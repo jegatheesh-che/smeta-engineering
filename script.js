@@ -96,6 +96,28 @@ document.addEventListener("DOMContentLoaded", () => {
       .set('.preloader', { display: "none" });
   }
 
+  // Mobile Nav Toggle Logic
+  const navHamburger = document.querySelector('.nav__hamburger');
+  const nav = document.querySelector('.nav');
+  
+  if (navHamburger) {
+    navHamburger.addEventListener('click', () => {
+      nav.classList.toggle('is-active');
+      
+      if (nav.classList.contains('is-active')) {
+        document.body.style.overflow = 'hidden';
+        
+        // Elegant staggered reveal for links
+        gsap.fromTo('.nav__links-container .nav__link', 
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', overwrite: true }
+        );
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // The "Editorial/Luxury" Vibe: Slow, elegant easing, clip-path reveals, no bounces.
   const tl = gsap.timeline({ defaults: { ease: "power3.inOut" }, delay: 2.2 });
 
