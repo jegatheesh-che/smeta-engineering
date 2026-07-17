@@ -2265,6 +2265,7 @@ body {
   }
   .de-discipline-card__image-panel {
     height: 350px;
+    order: -1;
   }
   .de-discipline-card__image-wrapper {
     top: 0;
