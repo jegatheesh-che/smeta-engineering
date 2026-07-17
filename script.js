@@ -505,16 +505,31 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       // Image Parallax (scrub)
-      gsap.to(imgWrapper, {
-        yPercent: 20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      if (img.id === "plumbing-img") {
+        // Special top-to-bottom pan for the tall plumbing image
+        gsap.set(img, { objectPosition: "50% 0%" });
+        gsap.to(img, {
+          objectPosition: "50% 100%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      } else {
+        gsap.to(imgWrapper, {
+          yPercent: 20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
     });
 
     // 4. CTA Strip
