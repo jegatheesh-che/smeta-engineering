@@ -2341,39 +2341,8 @@ body {
   
   /* --- Mobile App-like Modal for neo-box --- */
   .neo-box {
-    height: 460px; /* Uniform card shape */
-    overflow: hidden;
-  }
-  
-  .neo-box.is-expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    z-index: 10005;
-    border-radius: 0;
-    margin: 0;
-    padding: 4rem 1.5rem 2rem 1.5rem;
-    overflow-y: auto;
-    background: var(--color-bg);
-    box-sizing: border-box;
-  }
-  
-  .neo-box.is-expanded .neo-box__image {
-    height: 280px;
-    margin-top: 1rem;
-  }
-  
-  .neo-box.is-expanded .neo-box__read-more {
-    display: none;
-  }
-  
-  .neo-box.is-expanded .neo-box__close {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+    height: auto;
+    min-height: 400px; /* Uniform card shape initially */
   }
   .values__grid {
     grid-template-columns: 1fr;
@@ -2390,31 +2359,7 @@ body {
     transform: translateX(-50%);
   }
   
-  .values__box.is-expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    z-index: 10005;
-    border-radius: 0;
-    margin: 0;
-    padding: 4rem 1.5rem 2rem 1.5rem;
-    overflow-y: auto;
-    background: #111111; /* It's normally transparent, needs background as a modal */
-    box-sizing: border-box;
-  }
-  
-  .values__box.is-expanded .neo-box__read-more {
-    display: none;
-  }
-  
-  .values__box.is-expanded .neo-box__close {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-  }
+
 
   .values__box--full {
     grid-column: span 1;
