@@ -363,42 +363,29 @@
           submitBtnIcon.style.display = 'none';
           submitBtnSpinner.style.display = 'inline-block';
 
-          fetch("https://formsubmit.co/ajax/kulandaimaryantony2786@gmail.com", {
-            method: "POST",
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value,
-                _captcha: "false"
-            })
-          })
-          .then(response => {
-            if (!response.ok) {
-              return response.text().then(text => { throw new Error(text) });
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (data.success === "false" || data.success === false) {
-                throw new Error(data.message || "FormSubmit blocked the request.");
-            }
+          const nameVal = document.getElementById("name").value;
+          const emailVal = document.getElementById("email").value;
+          const subjectVal = document.getElementById("subject").value;
+          const messageVal = document.getElementById("message").value;
+
+          const mailtoSubject = encodeURIComponent(subjectVal + " (from " + nameVal + ")");
+          const mailtoBody = encodeURIComponent("Name: " + nameVal + "\nEmail: " + emailVal + "\n\nMessage:\n" + messageVal);
+          
+          const mailtoLink = "mailto:kulandaimaryantony2786@gmail.com?subject=" + mailtoSubject + "&body=" + mailtoBody;
+
+          // Open the email client
+          window.location.href = mailtoLink;
+
+          // Show success message and reset button
+          setTimeout(() => {
             contactForm.style.display = 'none';
             contactSuccess.style.display = 'block';
-          })
-          .catch(error => {
-            console.error("Form submission error:", error);
-            alert("Oops! There was a problem submitting your form. Please try again. \n\n(Error: " + (error.message || "Network Error") + ")");
             
             submitBtn.disabled = false;
             submitBtnText.textContent = 'SEND MESSAGE';
             submitBtnIcon.style.display = 'inline-block';
             submitBtnSpinner.style.display = 'none';
-          });
+          }, 500);
         });
       }
 
