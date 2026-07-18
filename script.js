@@ -29,10 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = btn.closest('.neo-box, .values__box');
       if (card) {
         card.classList.add('is-expanded');
-        // Prevent background scrolling ONLY on mobile where it acts as a fixed modal
-        if (window.innerWidth <= 768) {
-          document.body.style.overflow = 'hidden';
-        }
       }
     });
   });
@@ -43,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = btn.closest('.neo-box, .values__box');
       if (card) {
         card.classList.remove('is-expanded');
-        document.body.style.overflow = '';
       }
     });
   });
