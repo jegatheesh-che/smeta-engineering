@@ -217,7 +217,8 @@
             <button class="contact-submit" style="margin-top:1.5rem;" onclick="resetContactForm()">Send Another Message</button>
           </div>
 
-          <form class="contact-form" id="contactForm" novalidate>
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/kulandaimaryantony2786@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-group">
               <input type="text" id="name" name="name" required autocomplete="name" />
               <label for="name">Your Name</label>
@@ -363,29 +364,8 @@
           submitBtnIcon.style.display = 'none';
           submitBtnSpinner.style.display = 'inline-block';
 
-          const nameVal = document.getElementById("name").value;
-          const emailVal = document.getElementById("email").value;
-          const subjectVal = document.getElementById("subject").value;
-          const messageVal = document.getElementById("message").value;
-
-          const mailtoSubject = encodeURIComponent(subjectVal + " (from " + nameVal + ")");
-          const mailtoBody = encodeURIComponent("Name: " + nameVal + "\nEmail: " + emailVal + "\n\nMessage:\n" + messageVal);
-          
-          const mailtoLink = "mailto:kulandaimaryantony2786@gmail.com?subject=" + mailtoSubject + "&body=" + mailtoBody;
-
-          // Open the email client
-          window.location.href = mailtoLink;
-
-          // Show success message and reset button
-          setTimeout(() => {
-            contactForm.style.display = 'none';
-            contactSuccess.style.display = 'block';
-            
-            submitBtn.disabled = false;
-            submitBtnText.textContent = 'SEND MESSAGE';
-            submitBtnIcon.style.display = 'inline-block';
-            submitBtnSpinner.style.display = 'none';
-          }, 500);
+          // Submit the form natively to FormSubmit
+          contactForm.submit();
         });
       }
 
