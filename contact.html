@@ -384,6 +384,9 @@
             return response.json();
           })
           .then(data => {
+            if (data.success === "false" || data.success === false) {
+                throw new Error(data.message || "FormSubmit blocked the request.");
+            }
             contactForm.style.display = 'none';
             contactSuccess.style.display = 'block';
           })
