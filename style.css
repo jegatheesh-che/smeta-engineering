@@ -1166,13 +1166,19 @@ body {
 }
 
 .values__list li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--color-accent);
-  font-weight: bold;
-  font-size: 1.2rem;
+  top: 0.6rem;
+  border-left: 8px solid var(--color-accent);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.values__list li:hover::before {
+  transform: translateX(4px) scale(1.1);
+  filter: drop-shadow(0 0 5px var(--color-accent));
 }
 
 .values__list--cols {
@@ -1320,14 +1326,19 @@ body {
 }
 
 .gallery__values-list li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--color-accent);
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  top: 0.75rem;
+  border-left: 10px solid var(--color-accent);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery__values-list li:hover::before {
+  transform: translateX(4px) scale(1.1);
+  filter: drop-shadow(0 0 6px var(--color-accent));
 }
 
 /* --- CREATIVE 3-IMAGE GALLERY --- */
