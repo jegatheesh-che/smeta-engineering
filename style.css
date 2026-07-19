@@ -746,8 +746,14 @@ body {
 }
 
 .about__certificate-link:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes continuousZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .about__certificate {
@@ -756,6 +762,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: block;
+  animation: continuousZoom 6s ease-in-out infinite;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -841,9 +848,7 @@ body {
 }
 
 
-.about__certificate-link:hover .about__certificate {
-  transform: scale(1.05);
-}
+
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
