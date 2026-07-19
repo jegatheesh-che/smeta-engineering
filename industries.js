@@ -73,22 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
     preloaderTl
       .fromTo('.preloader__title .char', 
         { y: "100%" },
-        { y: "0%", duration: 1, stagger: 0.08, ease: 'power3.out' }
+        { y: "0%", duration: 0.5, stagger: 0.04, ease: 'power3.out' }
       )
       .to(obj, { 
         count: 100, 
-        duration: 1.5, 
+        duration: 0.75, 
         ease: "power2.inOut",
         onUpdate: () => {
           counter.innerText = Math.round(obj.count) + '%';
         }
       }, "<0.2")
-      .to(shapePath, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }, "<")
-      .to(shapeSvg, { rotation: 90, duration: 1.5, ease: "power2.inOut" }, "<")
-      .to('.preloader__title .char', { y: "-100%", duration: 0.6, stagger: 0.04, ease: 'power3.in' }, "+=0.3")
-      .to(counter, { opacity: 0, y: -20, duration: 0.4 }, "<")
-      .to(shapeSvg, { opacity: 0, scale: 0.8, duration: 0.4 }, "<")
-      .to('.preloader', { clipPath: "inset(0% 0% 100% 0%)", duration: 1.2, ease: "power4.inOut" }, "-=0.2")
+      .to(shapePath, { strokeDashoffset: 0, duration: 0.75, ease: "power2.inOut" }, "<")
+      .to(shapeSvg, { rotation: 90, duration: 0.75, ease: "power2.inOut" }, "<")
+      .to('.preloader__title .char', { y: "-100%", duration: 0.3, stagger: 0.02, ease: 'power3.in' }, "+=0.3")
+      .to(counter, { opacity: 0, y: -20, duration: 0.2 }, "<")
+      .to(shapeSvg, { opacity: 0, scale: 0.8, duration: 0.2 }, "<")
+      .to('.preloader', { clipPath: "inset(0% 0% 100% 0%)", duration: 0.6, ease: "power4.inOut" }, "-=0.2")
       .set('.preloader', { display: "none" });
   }
 
@@ -115,32 +115,32 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Title words rise from clip */
     .to('.content-box__word', {
       y: '0%',
-      duration: 1.1,
-      stagger: 0.14,
+      duration: 0.55,
+      stagger: 0.07,
       ease: 'power4.out'
     }, 0)
     /* Gold rule expands */
     .to('.content-box__rule', {
       scaleX: 1,
-      duration: 0.7,
+      duration: 0.35,
       ease: 'power2.inOut'
     }, 0.5)
     /* Description fades up */
     .to('.content-box__desc', {
       opacity: 1,
       y: 0,
-      duration: 0.9
+      duration: 0.45
     }, 0.6)
     /* Image clips open upward */
     .to('.content-box__img-clip', {
       clipPath: 'inset(0% 0% 0% 0%)',
-      duration: 1.3,
+      duration: 0.65,
       ease: 'power4.inOut'
     }, 0)
     /* Image settles (zoom out) */
     .to('.content-box__img', {
       scale: 1,
-      duration: 2.2,
+      duration: 1.1,
       ease: 'power2.out'
     }, 0.1)
     /* Fade in nav instantly */
@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.4,
           ease: "power2.out",
-          stagger: 0.1, // Stagger each list item
+          stagger: 0.05, // Stagger each list item
         },
       );
     }
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
         },
       );

@@ -1,7 +1,7 @@
 // Initialize Lenis for Smooth Scrolling
 if (typeof Lenis !== "undefined" && window.innerWidth > 900) {
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: 0.6,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: "vertical",
     gestureOrientation: "vertical",
@@ -98,22 +98,22 @@ document.addEventListener("DOMContentLoaded", () => {
     preloaderTl
       .fromTo('.preloader__title .char', 
         { y: "100%" },
-        { y: "0%", duration: 1, stagger: 0.08, ease: 'power3.out' }
+        { y: "0%", duration: 0.5, stagger: 0.04, ease: 'power3.out' }
       )
       .to(obj, { 
         count: 100, 
-        duration: 1.5, 
+        duration: 0.75, 
         ease: "power2.inOut",
         onUpdate: () => {
           counter.innerText = Math.round(obj.count) + '%';
         }
       }, "<0.2")
-      .to(shapePath, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }, "<")
-      .to(shapeSvg, { rotation: 90, duration: 1.5, ease: "power2.inOut" }, "<")
-      .to('.preloader__title .char', { y: "-100%", duration: 0.6, stagger: 0.04, ease: 'power3.in' }, "+=0.3")
-      .to(counter, { opacity: 0, y: -20, duration: 0.4 }, "<")
-      .to(shapeSvg, { opacity: 0, scale: 0.8, duration: 0.4 }, "<")
-      .to('.preloader', { clipPath: "inset(0% 0% 100% 0%)", duration: 1.2, ease: "power4.inOut" }, "-=0.2")
+      .to(shapePath, { strokeDashoffset: 0, duration: 0.75, ease: "power2.inOut" }, "<")
+      .to(shapeSvg, { rotation: 90, duration: 0.75, ease: "power2.inOut" }, "<")
+      .to('.preloader__title .char', { y: "-100%", duration: 0.3, stagger: 0.02, ease: 'power3.in' }, "+=0.3")
+      .to(counter, { opacity: 0, y: -20, duration: 0.2 }, "<")
+      .to(shapeSvg, { opacity: 0, scale: 0.8, duration: 0.2 }, "<")
+      .to('.preloader', { clipPath: "inset(0% 0% 100% 0%)", duration: 0.6, ease: "power4.inOut" }, "-=0.2")
       .set('.preloader', { display: "none" });
   }
 
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Elegant staggered reveal for links
         gsap.fromTo('.nav__links-container .nav__link', 
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', overwrite: true }
+          { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'power3.out', overwrite: true }
         );
       } else {
         document.body.style.overflow = '';
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".hero__image-wrapper",
     {
       clipPath: "inset(0% 0% 0% 0%)",
-      duration: 2,
+      duration: 1,
     },
     0,
   );
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".carousel",
     {
       scale: 1,
-      duration: 2.5,
+      duration: 1.25,
     },
     0,
   );
@@ -170,8 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".hero__title",
     {
       y: "0%",
-      duration: 1.5,
-      stagger: 0.15,
+      duration: 0.75,
+      stagger: 0.07,
     },
     0.5,
   );
@@ -186,8 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       opacity: 1,
       y: 0,
-      duration: 1.5,
-      stagger: 0.1,
+      duration: 0.75,
+      stagger: 0.05,
     },
     1.2,
   );
@@ -219,11 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setInterval(() => {
         gsap.to(descElement, {
           opacity: 0,
-          duration: 0.4,
+          duration: 0.2,
           onComplete: () => {
             descIndex = (descIndex + 1) % descTexts.length;
             descElement.textContent = descTexts[descIndex];
-            gsap.to(descElement, { opacity: 1, duration: 0.4 });
+            gsap.to(descElement, { opacity: 1, duration: 0.2 });
           },
         });
       }, 2800);
@@ -260,18 +260,18 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo(
       ".about__title",
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 },
+      { y: 0, opacity: 1, duration: 0.5 },
     )
     .fromTo(
       ".about__lead",
       { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 },
+      { y: 0, opacity: 1, duration: 0.5 },
       "-=0.7",
     )
     .fromTo(
       ".about__column p",
       { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 },
+      { y: 0, opacity: 1, duration: 0.4, stagger: 0.07 },
       "-=0.5",
     );
 
@@ -289,12 +289,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo(
       ".services__title",
       { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.2 },
+      { y: 0, opacity: 1, duration: 0.6 },
     )
     .fromTo(
       ".neo-box",
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, stagger: 0.3 },
+      { y: 0, opacity: 1, duration: 0.5, stagger: 0.15 },
       "-=0.8",
     );
 
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
   valuesTl.fromTo(
     ".values__box",
     { y: 60, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1.2, stagger: 0.3 },
+    { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
   );
 
   // ScrollTrigger for Gallery Section
@@ -328,18 +328,18 @@ document.addEventListener("DOMContentLoaded", () => {
     .fromTo(
       ".gallery__title",
       { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 },
+      { y: 0, opacity: 1, duration: 0.5 },
     )
     .fromTo(
       ".gallery__values-list li",
       { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, stagger: 0.2 },
+      { y: 0, opacity: 1, duration: 0.4, stagger: 0.1 },
       "-=0.5",
     )
     .fromTo(
       ".gallery__track",
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.5 },
+      { y: 0, opacity: 1, duration: 0.75 },
       "-=0.3",
     );
 
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
   videoTl.fromTo(
     ".video-wrapper",
     { y: 50, scale: 0.95, opacity: 0 },
-    { y: 0, scale: 1, opacity: 1, duration: 1 },
+    { y: 0, scale: 1, opacity: 1, duration: 0.5 },
   );
 
   // Performance Optimization: Hide the heavy hero iframe when it's out of view
@@ -415,12 +415,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .fromTo(
           deHeroImg,
           { clipPath: "inset(100% 0% 0% 0%)", scale: 1.1 },
-          { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2 },
+          { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 1 },
         )
         .fromTo(
           [deHeroTitle, deHeroText],
           { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, stagger: 0.2 },
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 },
           "-=1",
         );
     }
@@ -433,8 +433,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       y: 30,
       opacity: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.5,
+      stagger: 0.1,
       ease: "power2.out",
     });
 
@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { clipPath: "inset(0% 0% 100% 0%)" },
         {
           clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.5,
+          duration: 0.75,
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: card,
@@ -472,8 +472,8 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.05,
+          duration: 0.4,
+          stagger: 0.03,
           ease: "power2.out",
           scrollTrigger: {
             trigger: contentPanel,
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { scale: 1.25 },
         {
           scale: 1,
-          duration: 1.8,
+          duration: 0.9,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       y: 50,
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "power3.out",
     });
   }
@@ -555,32 +555,32 @@ document.addEventListener("DOMContentLoaded", () => {
         /* Title words rise from clip */
         .to('.content-box__word', {
           y: '0%',
-          duration: 1.1,
-          stagger: 0.14,
+          duration: 0.55,
+          stagger: 0.07,
           ease: 'power4.out'
         })
         /* Gold rule expands */
         .to('.content-box__rule', {
           scaleX: 1,
-          duration: 0.7,
+          duration: 0.35,
           ease: 'power2.inOut'
         }, '-=0.6')
         /* Description fades up */
         .to('.content-box__desc', {
           opacity: 1,
           y: 0,
-          duration: 0.9
+          duration: 0.45
         }, '-=0.5')
         /* Image clips open upward */
         .to('.content-box__img-clip', {
           clipPath: 'inset(0% 0% 0% 0%)',
-          duration: 1.3,
+          duration: 0.65,
           ease: 'power4.inOut'
         }, '-=1.3')
         /* Image settles (zoom out) */
         .to('.content-box__img', {
           scale: 1,
-          duration: 2.2,
+          duration: 1.1,
           ease: 'power2.out'
         }, '-=1.2');
     }
@@ -597,7 +597,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const target = parseInt(stat.getAttribute("data-target"), 10);
             gsap.to(stat, {
               innerHTML: target,
-              duration: 2,
+              duration: 1,
               ease: "power2.out",
               snap: { innerHTML: 1 },
               onUpdate: function () {
@@ -609,7 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.fromTo(
             ".pj-stat",
             { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power2.out" },
+            { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power2.out" },
           );
         },
       });
@@ -634,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.4,
           ease: "power3.out",
           scrollTrigger: {
             trigger: acc,
@@ -652,7 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
             otherAcc.classList.remove("expanded");
             gsap.to(otherAcc.querySelector(".pj-accordion-body"), {
               height: 0,
-              duration: 0.2,
+              duration: 0.1,
               ease: "power3.inOut",
             });
           }
@@ -661,12 +661,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Toggle current
         if (isExpanded) {
           acc.classList.remove("expanded");
-          gsap.to(body, { height: 0, duration: 0.2, ease: "power3.inOut" });
+          gsap.to(body, { height: 0, duration: 0.1, ease: "power3.inOut" });
         } else {
           acc.classList.add("expanded");
           gsap.to(body, {
             height: "auto",
-            duration: 0.2,
+            duration: 0.1,
             ease: "power3.inOut",
           });
         }
@@ -680,7 +680,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.2,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".pj-highlight-section",
@@ -696,8 +696,8 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
-        stagger: 0.2,
+        duration: 0.5,
+        stagger: 0.1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".de-cta-strip",
@@ -712,7 +712,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footerLine) {
     gsap.to(footerLine, {
       width: "100%",
-      duration: 1.5,
+      duration: 0.75,
       ease: "power3.inOut",
       scrollTrigger: {
         trigger: ".footer",
@@ -727,8 +727,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(contactHero.children, {
       y: 30,
       opacity: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.5,
+      stagger: 0.1,
       ease: "power3.out",
       delay: 0.2
     });
@@ -743,8 +743,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       y: 40,
       opacity: 0,
-      duration: 1,
-      stagger: 0.15,
+      duration: 0.5,
+      stagger: 0.07,
       ease: "power3.out"
     });
   }
@@ -758,8 +758,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       x: 40,
       opacity: 0,
-      duration: 1,
-      stagger: 0.15,
+      duration: 0.5,
+      stagger: 0.07,
       ease: "power3.out"
     });
   }
@@ -827,8 +827,8 @@ window.openLightbox = function(src) {
     document.body.style.overflow = 'hidden'; // Lock scrolling
     
     // GSAP Animate in
-    gsap.to(lightbox, { opacity: 1, duration: 0.4, ease: "power2.out" });
-    gsap.to(wrapper, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)", delay: 0.1 });
+    gsap.to(lightbox, { opacity: 1, duration: 0.2, ease: "power2.out" });
+    gsap.to(wrapper, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.5)", delay: 0.1 });
     
     // Add Esc key listener
     document.addEventListener('keydown', handleEsc);
@@ -841,10 +841,10 @@ window.closeLightbox = function() {
   
   if (lightbox && wrapper) {
     // GSAP Animate out
-    gsap.to(wrapper, { opacity: 0, scale: 0.9, duration: 0.3, ease: "power2.in" });
+    gsap.to(wrapper, { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" });
     gsap.to(lightbox, { 
       opacity: 0, 
-      duration: 0.4, 
+      duration: 0.2, 
       ease: "power2.in", 
       onComplete: () => {
         lightbox.style.display = 'none';
