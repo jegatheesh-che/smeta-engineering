@@ -542,8 +542,8 @@ body {
 
 .hero__logo-wrapper {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
+  top: -2.5rem;
+  left: -2.5rem;
   width: 150px;
   height: 150px;
   border-radius: 50%;
