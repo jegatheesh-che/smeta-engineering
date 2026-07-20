@@ -2632,6 +2632,7 @@ body {
     position: relative;
     top: auto;
     right: auto;
+    left: auto;
     margin: 0 auto 1.5rem auto;
   }
   .hero__text-col {
