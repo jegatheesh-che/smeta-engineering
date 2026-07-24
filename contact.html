@@ -218,11 +218,10 @@
           </div>
 
           <form class="contact-form" id="contactForm" novalidate>
-            <!-- FormSubmit Configurations -->
-            <input type="hidden" name="_subject" value="New Submission from Smeta Engineering Website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://jegatheesh-che.github.io/smeta-engineering/contact.html?success=true">
-            <input type="text" name="_honey" style="display:none">
+            <!-- Web3Forms Access Key (Replace value with the key sent to your email) -->
+            <input type="hidden" name="access_key" value="34d146b3-2328-433e-a931-d1bf1812ce5a">
+            <!-- Ensure subject is sent nicely -->
+            <input type="hidden" name="subject" value="New Submission from Smeta Engineering Website">
 
             <div class="form-group">
               <input type="text" id="name" name="name" required autocomplete="name" />
@@ -244,6 +243,11 @@
               <label for="message">Message</label>
               <span class="form-error" id="messageError">Please write your message.</span>
             </div>
+            <!-- Honeypot Anti-Spam Field -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <!-- On-Page hCaptcha Widget -->
+            <div class="h-captcha" data-captcha="true" style="margin-bottom: 1.5rem;"></div>
 
 
             <button type="submit" class="contact-submit" id="submitBtn">
@@ -378,17 +382,23 @@
           submitBtnSpinner.style.display = 'inline-block';
 
           const formData = new FormData(contactForm);
+          
+          if (!formData.get('h-captcha-response')) {
+            alert("Please check the Captcha box to verify you are human.");
+            submitBtn.disabled = false;
+            submitBtnText.textContent = 'SEND MESSAGE';
+            submitBtnIcon.style.display = 'inline-block';
+            submitBtnSpinner.style.display = 'none';
+            return;
+          }
 
-          fetch("https://formsubmit.co/ajax/jegatheesh.s1110@gmail.com", {
+          fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: {
-              "Accept": "application/json"
-            },
             body: formData
           })
           .then(async (response) => {
             let json = await response.json();
-            if (response.ok) {
+            if (response.status == 200) {
               contactForm.style.display = 'none';
               contactSuccess.style.display = 'block';
             } else {
@@ -436,7 +446,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
-
+    <!-- Web3Forms Script for on-page Captcha rendering -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
 
